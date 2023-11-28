@@ -19,4 +19,17 @@ export class AppComponent {
   deleteTodo(key: Date) {
     this.todos = this.todos.filter(item => item.key !== key);
   }
+
+  toggleTodo(key: Date) {
+    this.todos = this.todos.map(item => {
+      if (item.key === key) {
+        return {
+          ...item,
+          done: !item.done
+        }
+      }
+      return item;
+    })
+  }
+
 }

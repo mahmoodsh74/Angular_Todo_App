@@ -3,6 +3,13 @@
     {{todo.text}}
   </div>
   <div>
+    <button type="button"
+            class="btn btn-sm me-1"
+            [ngClass]="todo.done ? 'btn-success':'btn-warning'"
+            (click)="toggleTodo(todo.key)"
+    >
+      {{todo.done ? 'undone' : 'done'}}
+    </button>
     <button type="button" class="btn btn-info btn-sm">edit</button>
     <button type="button" class="btn btn-danger btn-sm ms-1" (click)="deleteTodo(todo.key)">delete</button>
   </div>
