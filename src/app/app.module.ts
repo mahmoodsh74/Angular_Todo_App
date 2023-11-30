@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormAddTodoComponent } from './components/form-add-todo/form-add-todo.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { EditTodoComponent } from './components/edit-todo/edit-todo.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TodoComponent } from './components/todo/todo.component';
     HeaderComponent,
     FormAddTodoComponent,
     TodosComponent,
-    TodoComponent
+    TodoComponent,
+    EditTodoComponent
   ],
   imports: [
     BrowserModule,
