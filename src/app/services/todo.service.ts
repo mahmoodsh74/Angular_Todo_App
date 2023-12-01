@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {TodoModel} from "../shared/todo.model";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class TodoService {
   constructor() {
   }
 
-  todos: any = [
+  todos: TodoModel[] = [
     // {key: 12345, done: false, text: 'new todo'}
   ];
 
@@ -16,7 +17,7 @@ export class TodoService {
   }
 
   add(todo: string) {
-    this.todos.push({key: Date.now(), done: false, text: todo});
+    this.todos.push(new TodoModel(Date.now(),todo,false));
   }
 
   delete(key: Date) {
@@ -44,7 +45,7 @@ export class TodoService {
   edit({key, text}) {
 
     let indexTodo = this.todos.findIndex((todo: any) => todo.key === key);
-    this.todos[indexTodo].text = !this.todos[indexTodo].text;
+    this.todos[indexTodo].text = this.todos[indexTodo].text;
 
     // this.todos = this.todos.map((item: any) => {
     //   if (item.key === key) {

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {TodoModel} from "../../shared/todo.model";
 
 @Component({
   selector: 'todos',
@@ -7,7 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class TodosComponent {
   doneStatus: boolean = false;
-  @Input() todos!: Array<{ key: Date, done: boolean, text: string }>;
+  @Input() todos!: Array<TodoModel>;
   // @Output() delete = new EventEmitter<Date>();
   // @Output() done = new EventEmitter<Date>();
   // @Output() edit = new EventEmitter<any>();

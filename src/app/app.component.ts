@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TodoService} from "./services/todo.service";
+import {TodoModel} from "./shared/todo.model";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
 
-  todos: any[] = [];
+  todos: TodoModel[] = [];
 
   // addTodo(todo: string) {
   //   this.todos = [
